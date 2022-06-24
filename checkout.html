@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Fonts Embeded-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
+      * {
+        font-family: "Didact Gothic", sans-serif;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts Embeded -->
+    <title>Checkout</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-between w-100">
+          <div class="d-flex">
+            <a class="navbar-brand align-self-center">Online Library</a>
+          </div>
+          <div class="d-flex">
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-warning" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Added MainWrapper -->
+    <form action="#" method="">
+      <div class="container mt-5 w-50">
+        <div class="h1 mb-2 d-flex justify-content-center">Checkout Form</div>
+
+        <!-- Table Starts Here -->
+        <div
+          class="container table-responsive-xxl border border-success border-2 mx-auto p-3 w-75"
+        >
+          <table class="container-fluid w-50 table align-middle border-0">
+            <!-- Name Section -->
+            <tr class="">
+              <td class="border-0 w-25 text-end">Name:</td>
+              <td class="border-0 w-50">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="w-100"
+                  placeholder="Ex. Juan Dela Cruz"
+                />
+              </td>
+            </tr>
+
+            <!-- Address Section -->
+            <tr class="">
+              <td class="border-0 w-25 text-end">Address:</td>
+              <td class="border-0 w-50">
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="w-100"
+                  placeholder="Ex. San Juan St. Planet Pluto 8888"
+                />
+              </td>
+            </tr>
+
+            <!-- Region Section -->
+            <tr class="">
+              <td class="border-0 w-25 text-end">Region:</td>
+              <td class="border-0">
+                <select name="region" id="region" class="" required>
+                  <option value="" selected disabled>Choos One</option>
+                  <option value="NCR">NCR</option>
+                  <option value="Region I">Region I</option>
+                  <option value="Region II">Region II</option>
+                  <option value="Region III">Region III</option>
+                  <option value="Region IV">Region IV</option>
+                  <option value="Region V">Region V</option>
+                  <option value="Region VI">Region VI</option>
+                  <option value="Region VII">Region VII</option>
+                  <option value="Region VIII">Region VIII</option>
+                  <option value="Region IX">Region IX</option>
+                  <option value="Region X">Region X</option>
+                  <option value="Region XI">Region XI</option>
+                  <option value="Region XII">Region XII</option>
+                </select>
+              </td>
+            </tr>
+
+            <!-- Contact Number Section-->
+            <tr class="">
+              <td class="border-0 w-25 text-end">Contact Number:</td>
+              <td class="border-0">
+                <input
+                  type="text"
+                  name="contactNumber"
+                  id="contactNumber"
+                  size="50"
+                  maxlength="11"
+                  class=""
+                  placeholder="Ex. 0935 111 2222"
+                />
+              </td>
+            </tr>
+
+            <!-- Payment Method Section + Cash on Delivery -->
+            <tr class="">
+              <td class="border-0 w-25 text-end">Payment Method:</td>
+              <td class="border-0">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="cod"
+                    value="cod"
+                    onclick="displayPaymentMethod('Cash on Delivery')"
+                  />
+                  <label class="form-check-label" for="cod"
+                    >Cash on Delivery</label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="aExpress"
+                    value="aExpress"
+                    onclick="displayPaymentMethod('American Express')"
+                  />
+                  <label class="form-check-label" for="aExpress"
+                    >American Express</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="visa"
+                    value="visa"
+                    onclick="displayPaymentMethod('Visa')"
+                  />
+                  <label class="form-check-label" for="visa">Visa</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="masterCard"
+                    value="masterCard"
+                    onclick="displayPaymentMethod('Master Card')"
+                  />
+                  <label class="form-check-label" for="masterCard"
+                    >Master Card</label
+                  >
+                </div>
+              </td>
+            </tr>
+            <!-- Place Order Button -->
+            <tr class="">
+              <td class="border-0"></td>
+              <td class="border-0">
+                <input
+                  type="button"
+                  value="Place Order"
+                  class="btn btn-success"
+                  onclick="getData()"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasExample"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                />
+              </td>
+            </tr>
+            <!-- End of Table -->
+          </table>
+        </div>
+      </div>
+    </form>
+    >
+
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Please Confirm your details
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <div class="row">
+            <div class="col">Name</div>
+            <div class="col" id="d-name"></div>
+          </div>
+          <div class="row">
+            <div class="col">Address</div>
+            <div class="col" id="d-address"></div>
+          </div>
+          <div class="row">
+            <div class="col">Region</div>
+            <div class="col" id="d-region"></div>
+          </div>
+          <div class="row">
+            <div class="col">Contact Number</div>
+            <div class="col" id="d-num"></div>
+          </div>
+          <div class="row">
+            <div class="col">Payment Method</div>
+            <div class="col" id="d-p-method"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function getData() {
+        let cName = document.getElementById("name").value;
+        let cAddress = document.getElementById("address").value;
+        let cRegion = document.getElementById("region").value;
+        let cp = document.getElementById("contactNumber").value;
+        let a = cp.slice(-4);
+        let masked = a.padStart(cp.length, "*");
+
+        document.getElementById("d-name").innerHTML = cName;
+        document.getElementById("d-address").innerHTML = cAddress;
+        document.getElementById("d-region").innerHTML = cRegion;
+        document.getElementById("d-num").innerHTML = masked;
+      }
+      function displayPaymentMethod(method) {
+        document.getElementById("d-p-method").innerHTML = method;
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!-- Property of Ryan Domincel -->
